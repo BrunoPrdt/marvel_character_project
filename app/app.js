@@ -29,6 +29,7 @@ import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/e
 
 // import ThemeProvider from Material UI, not from "styled component"
 import { ThemeProvider } from '@material-ui/core';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import configureStore from './configureStore';
 
 // Import i18n messages
@@ -53,15 +54,18 @@ const MOUNT_NODE = document.getElementById('app');
 
 const render = messages => {
   ReactDOM.render(
-    <Provider store={store}>
-      <LanguageProvider messages={messages}>
-        <ConnectedRouter history={history}>
-          <ThemeProvider theme={theme}>
-            <App />
-          </ThemeProvider>
-        </ConnectedRouter>
-      </LanguageProvider>
-    </Provider>,
+    <CssBaseline>
+      <Provider store={store}>
+        <LanguageProvider messages={messages}>
+          <ConnectedRouter history={history}>
+            <ThemeProvider theme={theme}>
+              <App />
+            </ThemeProvider>
+          </ConnectedRouter>
+        </LanguageProvider>
+      </Provider>
+      ,
+    </CssBaseline>,
     MOUNT_NODE,
   );
 };

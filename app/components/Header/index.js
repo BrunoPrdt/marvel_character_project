@@ -2,12 +2,16 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import Button from '@material-ui/core/Button';
+// import { Link, NavLink } from 'react-router-dom';
 import A from './A';
 import Img from './Img';
 import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
+import HeaderLinkPrimary from './HeaderLinkPrimary';
+import HeaderLinkSecondary from './HeaderLinkSecondary';
 import Banner from './banner.jpg';
 import messages from './messages';
+// import {NavLink} from "react-router-dom";
 
 function Header() {
   return (
@@ -16,8 +20,9 @@ function Header() {
         <Img src={Banner} alt="react-boilerplate - Logo" />
       </A>
       <NavBar>
-        <Button variant="contained">Default</Button>
-        <Button variant="contained" color="primary">
+        <HeaderLinkPrimary to="search">Search</HeaderLinkPrimary>
+        <HeaderLinkSecondary to="search">SearchBis</HeaderLinkSecondary>
+        <Button variant="contained" color="primary" href="#contained-buttons">
           Primary
         </Button>
         <Button variant="contained" color="secondary">
@@ -26,12 +31,11 @@ function Header() {
         <Button variant="contained" disabled>
           Disabled
         </Button>
-        <Button variant="contained" color="primary" href="#contained-buttons">
-          Link
-        </Button>
+        {/* <NavLink to="/"> */}
         <HeaderLink to="/">
           <FormattedMessage {...messages.home} />
         </HeaderLink>
+        {/* </NavLink> */}
         <HeaderLink to="/features">
           <FormattedMessage {...messages.features} />
         </HeaderLink>
