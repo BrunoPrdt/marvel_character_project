@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import Button from '@material-ui/core/Button';
 // import { Link, NavLink } from 'react-router-dom';
 import A from './A';
 import Img from './Img';
@@ -20,17 +19,12 @@ function Header() {
         <Img src={Banner} alt="react-boilerplate - Logo" />
       </A>
       <NavBar>
-        <HeaderLinkPrimary to="search">Search</HeaderLinkPrimary>
-        <HeaderLinkSecondary to="search">SearchBis</HeaderLinkSecondary>
-        <Button variant="contained" color="primary" href="#contained-buttons">
-          Primary
-        </Button>
-        <Button variant="contained" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="contained" disabled>
-          Disabled
-        </Button>
+        <HeaderLinkPrimary to="search">
+          <FormattedMessage {...messages.search} />
+        </HeaderLinkPrimary>
+        <HeaderLinkSecondary to="search">
+          <FormattedMessage {...messages.contactMe} />
+        </HeaderLinkSecondary>
         {/* <NavLink to="/"> */}
         <HeaderLink to="/">
           <FormattedMessage {...messages.home} />

@@ -9,12 +9,15 @@
  */
 const addLocaleData = require('react-intl').addLocaleData; //eslint-disable-line
 const enLocaleData = require('react-intl/locale-data/en');
+const frLocaleData = require('react-intl/locale-data/fr');
 const deLocaleData = require('react-intl/locale-data/de');
 
 const enTranslationMessages = require('./translations/en.json');
+const frTranslationMessages = require('./translations/fr.json');
 const deTranslationMessages = require('./translations/de.json');
 
 addLocaleData(enLocaleData);
+addLocaleData(frLocaleData);
 addLocaleData(deLocaleData);
 
 const DEFAULT_LOCALE = 'en';
@@ -22,6 +25,7 @@ const DEFAULT_LOCALE = 'en';
 // prettier-ignore
 const appLocales = [
   'en',
+  'fr',
   'de',
 ];
 
@@ -42,6 +46,7 @@ const formatTranslationMessages = (locale, messages) => {
 
 const translationMessages = {
   en: formatTranslationMessages('en', enTranslationMessages),
+  fr: formatTranslationMessages('fr', frTranslationMessages),
   de: formatTranslationMessages('de', deTranslationMessages),
 };
 

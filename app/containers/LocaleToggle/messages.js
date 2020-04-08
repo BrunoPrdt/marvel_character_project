@@ -12,6 +12,10 @@ export default defineMessages({
     id: `${scope}.en`,
     defaultMessage: 'en',
   },
+  fr: {
+    id: `${scope}.fr`,
+    defaultMessage: 'fr',
+  },
   de: {
     id: `${scope}.de`,
     defaultMessage: 'de',
