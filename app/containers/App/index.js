@@ -13,10 +13,11 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
-import SearchPage from 'containers/SearchPage/Loadable';
+import CharacterDetailsPage from 'containers/CharacterDetailsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import CharactersPage from 'containers/CharactersPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
@@ -41,8 +42,9 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/search" component={CharactersPage} />
         <Route path="/features" component={FeaturePage} />
-        <Route path="/search" component={SearchPage} />
+        <Route path="/details" component={CharacterDetailsPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

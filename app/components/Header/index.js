@@ -22,8 +22,8 @@ function Header() {
         <HeaderLinkPrimary to="search">
           <FormattedMessage {...messages.search} />
         </HeaderLinkPrimary>
-        <HeaderLinkSecondary to="search">
-          <FormattedMessage {...messages.contactMe} />
+        <HeaderLinkSecondary to="details">
+          <FormattedMessage {...messages.details} />
         </HeaderLinkSecondary>
         {/* <NavLink to="/"> */}
         <HeaderLink to="/">

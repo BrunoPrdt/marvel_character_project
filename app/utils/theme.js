@@ -12,6 +12,9 @@ export const theme = createMuiTheme({
     secondary: {
       main: '#ef6694',
     },
+    default: {
+      main: '#536dfe',
+    },
   },
   status: {
     danger: 'orange',

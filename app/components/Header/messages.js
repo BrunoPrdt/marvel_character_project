@@ -20,8 +20,8 @@ export default defineMessages({
     id: `${scope}.search`,
     defaultMessage: 'Search',
   },
-  contactMe: {
-    id: `${scope}.contactMe`,
-    defaultMessage: 'Contact me',
+  details: {
+    id: `${scope}.details`,
+    defaultMessage: 'Détails',
   },
 });
