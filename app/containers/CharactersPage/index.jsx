@@ -9,7 +9,8 @@ import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import H1 from 'components/H1';
 import Checkbox from '@material-ui/core/Checkbox';
-import StickyHeadTable from './tableCharacters';
+import StickyHeadTable from './TableCharacters';
+import CardCharacter from './CardCharacter';
 import messages from './messages';
 import './index.css';
 
@@ -26,7 +27,7 @@ export default class CharactersPage extends React.Component {
     super(props);
     this.state = {
       searchName: '',
-      persos: [],
+      characters: [],
       checked: false,
     };
   }
@@ -47,7 +48,7 @@ export default class CharactersPage extends React.Component {
       .then(response => response.json())
       .then(json => {
         const data = json;
-        this.setState({ persos: data.data.results });
+        this.setState({ characters: data.data.results });
       })
       .catch(error => console.log(error)) // catch error json
       .catch(error => console.log(error)); // catch error API
@@ -84,7 +85,10 @@ export default class CharactersPage extends React.Component {
           />
         </form>
         <div>
-          <StickyHeadTable persos={this.state.persos} />
+          <StickyHeadTable characters={this.state.characters} />
+        </div>
+        <div>
+          <CardCharacter character={this.state.characters[0]} />
         </div>
       </div>
     );

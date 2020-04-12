@@ -1,5 +1,5 @@
 /**
- * containers/CharactersPages/tableCharacters.jsx
+ * containers/CharactersPages/TableCharacters.jsx
  * @author Bruno Prdt
  */
 import React from 'react';
@@ -37,7 +37,7 @@ export default function StickyHeadTable(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   // eslint-disable-next-line react/prop-types
-  const rows = props.persos;
+  const rows = props.characters;
   const columns = [
     {
       id: 'id',
