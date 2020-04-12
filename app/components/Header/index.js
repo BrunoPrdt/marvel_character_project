@@ -1,8 +1,11 @@
+/**
+ * components/Header/index.js
+ * @author Bruno Prdt
+ */
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 // import { Link, NavLink } from 'react-router-dom';
-import A from './A';
 import Img from './Img';
 import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
@@ -15,14 +18,12 @@ import messages from './messages';
 function Header() {
   return (
     <div>
-      <A href="https://www.reactboilerplate.com/">
-        <Img src={Banner} alt="react-boilerplate - Logo" />
-      </A>
+      <Img src={Banner} alt="react-boilerplate - Logo" />
       <NavBar>
-        <HeaderLinkPrimary to="search">
+        <HeaderLinkPrimary to="/search">
           <FormattedMessage {...messages.search} />
         </HeaderLinkPrimary>
-        <HeaderLinkSecondary to="details">
+        <HeaderLinkSecondary to="/details">
           <FormattedMessage {...messages.details} />
         </HeaderLinkSecondary>
         {/* <NavLink to="/"> */}
