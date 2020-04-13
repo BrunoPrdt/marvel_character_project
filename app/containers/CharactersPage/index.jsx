@@ -10,7 +10,6 @@ import TextField from '@material-ui/core/TextField';
 import H1 from 'components/H1';
 import Checkbox from '@material-ui/core/Checkbox';
 import StickyHeadTable from './TableCharacters';
-import CardCharacter from './CardCharacter';
 import messages from './messages';
 import './index.css';
 import GridCharacters from './GridCharacters';
@@ -39,7 +38,6 @@ export default class CharactersPage extends React.Component {
 
   handleChecked = event => {
     this.setState({ checked: event.currentTarget.checked });
-    console.log(this.state.checked);
   };
 
   handleCallAPICharacters = () => {
@@ -80,19 +78,17 @@ export default class CharactersPage extends React.Component {
             <FormattedMessage {...messages.submit} />
           </Button>
           <Checkbox
+            checked={this.state.checked}
             onChange={this.handleChecked}
             inputProps={{ 'aria-label': 'primary checkbox' }}
             color="secondary"
           />
         </form>
-        {/* eslint-disable-next-line prettier/prettier */}
-        {this.state.characters[0] ?
-          <div>
-            <CardCharacter character={this.state.characters[0]} />
-            {/* eslint-disable-next-line prettier/prettier */}
-          </div> : <div></div>}
-        <GridCharacters characters={this.state.characters} />
-        <StickyHeadTable characters={this.state.characters} />
+        {this.state.checked ? (
+          <GridCharacters characters={this.state.characters} />
+        ) : (
+          <StickyHeadTable characters={this.state.characters} />
+        )}
       </div>
     );
   }

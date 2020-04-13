@@ -44,7 +44,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/search" component={CharactersPage} />
         <Route path="/features" component={FeaturePage} />
-        <Route path="/details" component={CharacterDetailsPage} />
+        <Route path="/characterbyid/:id" component={CharacterDetailsPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
