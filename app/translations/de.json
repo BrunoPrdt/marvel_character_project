@@ -1,4 +1,5 @@
 {
+  "boilerplate.containers.CharacterDetailsPage.header": "Bestaunen Sie die Details des Charakters",
   "boilerplate.containers.CharactersPage.header": "Marvels Charaktersuchseite",
   "boilerplate.containers.CharactersPage.textfieldLabel": "Suche",
   "boilerplate.containers.CharactersPage.submit": "Senden",
