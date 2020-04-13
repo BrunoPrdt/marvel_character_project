@@ -1,5 +1,5 @@
 /*
- * FeaturePage Messages
+ * CharactersPage Messages
  *
  * This contains all the text for the FeaturePage component.
  */
@@ -19,5 +19,9 @@ export default defineMessages({
   submit: {
     id: `${scope}.submit`,
     defaultMessage: 'Envoyer',
+  },
+  cardDescription: {
+    id: `${scope}.cardDescription`,
+    defaultMessage: 'Description',
   },
 });

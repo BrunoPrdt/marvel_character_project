@@ -60,7 +60,6 @@ export default function StickyHeadTable(props) {
       format: value => value.toLocaleDateString(),
     },
   ];
-  console.log('persos =>', rows);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -121,8 +120,9 @@ export default function StickyHeadTable(props) {
                   </TableCell>
                   <TableCell key={row.name} align="right">
                     <img
-                      src={row.thumbnail.path + row.thumbnail.extensions}
+                      src={`${row.thumbnail.path}.${row.thumbnail.extension}`}
                       alt={row.name}
+                      style={{ width: 100 }}
                     />
                   </TableCell>
                 </TableRow>

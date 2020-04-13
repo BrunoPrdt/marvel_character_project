@@ -26,7 +26,7 @@ export default class CharactersPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchName: '',
+      searchName: 'venom',
       characters: [],
       checked: false,
     };
@@ -87,9 +87,12 @@ export default class CharactersPage extends React.Component {
         <div>
           <StickyHeadTable characters={this.state.characters} />
         </div>
-        <div>
-          <CardCharacter character={this.state.characters[0]} />
-        </div>
+        {/* eslint-disable-next-line prettier/prettier */}
+        {this.state.characters[0] ?
+          <div>
+            <CardCharacter character={this.state.characters[0]} />
+            {/* eslint-disable-next-line prettier/prettier */}
+          </div> : <div></div>}
       </div>
     );
   }
