@@ -13,6 +13,7 @@ import StickyHeadTable from './TableCharacters';
 import CardCharacter from './CardCharacter';
 import messages from './messages';
 import './index.css';
+import GridCharacters from './GridCharacters';
 
 const myApiHeader = new Headers({
   'Content-Type': 'application/x-www-form-urlencoded',
@@ -84,15 +85,14 @@ export default class CharactersPage extends React.Component {
             color="secondary"
           />
         </form>
-        <div>
-          <StickyHeadTable characters={this.state.characters} />
-        </div>
         {/* eslint-disable-next-line prettier/prettier */}
         {this.state.characters[0] ?
           <div>
             <CardCharacter character={this.state.characters[0]} />
             {/* eslint-disable-next-line prettier/prettier */}
           </div> : <div></div>}
+        <GridCharacters characters={this.state.characters} />
+        <StickyHeadTable characters={this.state.characters} />
       </div>
     );
   }
