@@ -119,11 +119,13 @@ export default function StickyHeadTable(props) {
                     {row.comics.available}
                   </TableCell>
                   <TableCell key={row.name} align="right">
-                    <img
-                      src={`${row.thumbnail.path}.${row.thumbnail.extension}`}
-                      alt={row.name}
-                      style={{ width: 100 }}
-                    />
+                    <a href={`characterbyid/${row.id}`}>
+                      <img
+                        src={`${row.thumbnail.path}.${row.thumbnail.extension}`}
+                        alt={row.name}
+                        style={{ width: 100 }}
+                      />
+                    </a>
                   </TableCell>
                 </TableRow>
               ))}

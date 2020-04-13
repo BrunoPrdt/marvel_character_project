@@ -12,4 +12,8 @@ export default defineMessages({
     id: `${scope}.header`,
     defaultMessage: 'Détail du personnage Marvel',
   },
+  cardDescription: {
+    id: `${scope}.cardDescription`,
+    defaultMessage: 'Description',
+  },
 });

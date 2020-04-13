@@ -4,6 +4,7 @@
   "boilerplate.containers.CharactersPage.textfieldLabel": "Rechercher",
   "boilerplate.containers.CharactersPage.submit": "Envoyer",
   "boilerplate.containers.CharactersPage.cardDescription": "Description",
+  "boilerplate.containers.CharacterDetailsPage.cardDescription": "Description",
   "boilerplate.components.Footer.author.message": "Réalisé avec amour, {author}.",
   "boilerplate.components.Footer.license.message": "Ce projet est sous couvert de la licence MIT.",
   "boilerplate.components.Header.features": "Fonctionnalités",

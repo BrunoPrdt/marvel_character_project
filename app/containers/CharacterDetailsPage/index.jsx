@@ -21,22 +21,26 @@ export default class CharacterDetailsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      character: [],
+      character: '',
+      // eslint-disable-next-line react/prop-types
+      searchId: props.match.params.id,
     };
+    // console.log('props match:', props.match.params.id, 'searchId:', this.state.searchId);
   }
 
-  handleChange = event => {
-    this.setState({ searchName: event.currentTarget.value });
-  };
+  componentDidMount() {
+    // eslint-disable-next-line no-unused-expressions
+    this.handleCallAPICharacters();
+  }
 
   handleCallAPICharacters = () => {
-    const name = this.state.searchName;
-    const URL = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${name}&apikey=0582a3f41e5acacd4c34c41d770efdb6`;
+    const id = this.state.searchId;
+    const URL = `https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=0582a3f41e5acacd4c34c41d770efdb6`;
     fetch(URL, init)
       .then(response => response.json())
       .then(json => {
         const data = json;
-        this.setState({ characters: data.data.results });
+        this.setState({ character: data.data.results[0] });
       })
       .catch(error => console.log(error)) // catch error json
       .catch(error => console.log(error)); // catch error API
@@ -55,7 +59,11 @@ export default class CharacterDetailsPage extends React.Component {
         <H1 className="h1-characters">
           <FormattedMessage {...messages.header} />
         </H1>
-        <CardCharacter perso={this.state.character} />
+        {this.state.character ? (
+          <CardCharacter character={this.state.character} />
+        ) : (
+          <div />
+        )}
       </div>
     );
   }

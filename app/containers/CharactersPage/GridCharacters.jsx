@@ -22,7 +22,7 @@ export default function GridCharacters(props) {
     <div className={classes.root}>
       <GridList cellHeight={260} className={classes.gridList} cols={2}>
         {characters.map(character => (
-          <CardCharacter character={character} />
+          <CardCharacter character={character} key={character.id} />
         ))}
       </GridList>
     </div>

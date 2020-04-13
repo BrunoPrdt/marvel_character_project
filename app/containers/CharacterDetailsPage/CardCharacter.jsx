@@ -49,8 +49,8 @@ export default function CardCharacter(props) {
     setExpanded(!expanded);
   };
 
-  const character = props.character;
-  console.log('dans card charracter', character);
+  // eslint-disable-next-line react/prop-types
+  const { character } = props;
 
   return (
     <Card className={classes.root}>
