@@ -8,6 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import H1 from 'components/H1';
 import messages from './messages';
 import CardCharacter from './CardCharacter';
+import '../CharactersPage/index.css';
 
 const myApiHeader = new Headers({
   'Content-Type': 'application/x-www-form-urlencoded',

@@ -12,6 +12,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import {NavLink} from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -109,9 +110,11 @@ export default function StickyHeadTable(props) {
                     const value = row[column.id];
                     return (
                       <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number'
-                          ? column.format(value)
-                          : value}
+                        <NavLink to={`characterbyid/${row.id}`}>
+                          {column.format && typeof value === 'number'
+                            ? column.format(value)
+                            : value}
+                        </NavLink>
                       </TableCell>
                     );
                   })}

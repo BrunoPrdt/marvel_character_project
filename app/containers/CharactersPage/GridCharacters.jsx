@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import CardCharacter from './CardCharacter';
+import './index.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,9 +21,18 @@ export default function GridCharacters(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={260} className={classes.gridList} cols={2}>
+      <GridList
+        cellHeight={160}
+        id="personalGridListId"
+        className={classes.gridList}
+        cols={3}
+      >
         {characters.map(character => (
-          <CardCharacter character={character} key={character.id} />
+          <CardCharacter
+            character={character}
+            key={character.id}
+            cols={2 || 1}
+          />
         ))}
       </GridList>
     </div>

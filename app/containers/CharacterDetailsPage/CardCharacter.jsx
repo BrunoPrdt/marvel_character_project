@@ -17,13 +17,16 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import '../CharactersPage/index.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 345,
+    padding: '1em',
   },
   media: {
-    height: 0,
+    width: 345,
+    height: 194,
     paddingTop: '56.25%', // 16:9
   },
   expand: {
@@ -37,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: red[900],
   },
 }));
 
@@ -53,57 +56,60 @@ export default function CardCharacter(props) {
   const { character } = props;
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            M
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={character.name}
-        subheader={character.modified}
-      />
-      <CardMedia
-        className={classes.media}
-        image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-        title={character.name}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {character.description.substr(0, 50)}... Click for more.;
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+    <div className='detailsCard'>
+      <Card className={classes.root} id="personalCard">
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe" className={classes.avatar}>
+              M
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={character.name}
+          subheader={character.modified}
+        />
+        <CardMedia
+          className={classes.media}
+          id="cardMediaId"
+          image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          title={character.name}
+        />
         <CardContent>
-          <Typography paragraph>
-            <FormattedMessage {...messages.cardDescription} />
+          <Typography variant="body2" color="textSecondary" component="p">
+            {character.description.substr(0, 50)}... Click for more.;
           </Typography>
-          <Typography paragraph>{character.description}</Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>
+              <FormattedMessage {...messages.cardDescription} />
+            </Typography>
+            <Typography paragraph>{character.description}</Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+    </div>
   );
 }

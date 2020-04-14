@@ -26,3 +26,34 @@
    background: #536dfe;
    color: #fff;
  }
+
+#personalGridListId {
+  margin-right: 2em;
+}
+
+#personalCard{
+  width: 345px!important;
+}
+.makeStyles-root-247 {
+  width: 345px;
+  height: auto;
+  padding: 0.5em;
+}
+
+.MuiTypography-root {
+  height: 40px;
+}
+
+.MuiGridList-root {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  overflow-y: auto;
+  justify-content: space-evenly;
+}
+*.detailsCard {
+  margin: 6em auto;
+  display: flex;
+  justify-content: center;
+}
