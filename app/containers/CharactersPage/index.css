@@ -34,7 +34,7 @@
 #personalCard{
   width: 345px!important;
 }
-.makeStyles-root-247 {
+.MuiCard-root {
   width: 345px;
   height: auto;
   padding: 0.5em;
@@ -56,4 +56,11 @@
   margin: 6em auto;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+.gridComicsH2 {
+  margin-bottom: 2em;
+}
+.figcaption {
+  margin-top: 4em;
 }

@@ -26,7 +26,7 @@ export default class CharactersPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchName: 'venom',
+      searchName: '',
       characters: [],
       checked: false,
     };
@@ -83,6 +83,7 @@ export default class CharactersPage extends React.Component {
             inputProps={{ 'aria-label': 'primary checkbox' }}
             color="secondary"
           />
+          <FormattedMessage {...messages.checkbox} />
         </form>
         {this.state.checked ? (
           <GridCharacters characters={this.state.characters} />

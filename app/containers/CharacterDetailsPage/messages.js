@@ -16,4 +16,8 @@ export default defineMessages({
     id: `${scope}.cardDescription`,
     defaultMessage: 'Description',
   },
+  gridComicsHeader: {
+    id: `${scope}.gridComicsHeader`,
+    defaultMessage: 'Comics dans lesquels apparait le personnage',
+  },
 });

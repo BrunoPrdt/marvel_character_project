@@ -17,6 +17,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import {NavLink} from "react-router-dom";
+import HeaderLinkSecondary from "../../components/Header/HeaderLinkSecondary";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,57 +55,33 @@ export default function CardCharacter(props) {
   console.log('dans card charracter', character);
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            M
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={character.name}
-        subheader={character.modified}
-      />
-      <CardMedia
-        className={classes.media}
-        image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-        title={character.name}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {character.description.substr(0, 50)}... Click for more.;
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+    <div>
+      <Card className={classes.root}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe" className={classes.avatar}>
+              M
+            </Avatar>
+          }
+          title={character.name}
+          subheader={character.modified}
+        />
+        <CardMedia
+          className={classes.media}
+          image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          title={character.name}
+        />
         <CardContent>
-          <Typography paragraph>
-            <FormattedMessage {...messages.cardDescription} />
+          <Typography variant="body2" color="textSecondary" component="p">
+            {character.description.substr(0, 50)}...
           </Typography>
-          <Typography paragraph>{character.description}</Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <HeaderLinkSecondary to={`characterbyid/${character.id}`}>
+            <FormattedMessage {...messages.cardButton} />
+          </HeaderLinkSecondary>
+        </CardActions>
+      </Card>
+    </div>
   );
 }

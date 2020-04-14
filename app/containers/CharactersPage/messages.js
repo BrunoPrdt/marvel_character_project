@@ -20,8 +20,16 @@ export default defineMessages({
     id: `${scope}.submit`,
     defaultMessage: 'Envoyer',
   },
+  checkbox: {
+    id: `${scope}.checkbox`,
+    defaultMessage: "Cocher pour changer l'affichage des résultats",
+  },
   cardDescription: {
     id: `${scope}.cardDescription`,
     defaultMessage: 'Description',
+  },
+  cardButton: {
+    id: `${scope}.cardButton`,
+    defaultMessage: 'Click for more',
   },
 });
