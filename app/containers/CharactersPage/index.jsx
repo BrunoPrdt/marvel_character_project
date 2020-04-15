@@ -72,6 +72,10 @@ export default class CharactersPage extends React.Component {
             variant="outlined"
             value={this.state.searchName}
             onChange={this.handleChange}
+            onKeyPress={e => {
+              // eslint-disable-next-line no-unused-expressions
+              e.key === 'Enter' && e.preventDefault();
+            }}
             label=<FormattedMessage {...messages.textfieldLabel} />
           />
           <Button id="send" onClick={this.handleCallAPICharacters}>

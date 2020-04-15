@@ -16,6 +16,7 @@ import SearchTwoToneIcon from '@material-ui/icons/SearchTwoTone';
 import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import InfoTwoToneIcon from '@material-ui/icons/InfoTwoTone';
+import PermContactCalendarTwoToneIcon from '@material-ui/icons/PermContactCalendarTwoTone';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
@@ -96,7 +97,7 @@ export default function SwipeableTemporaryDrawer() {
         <ListItem button key="contact">
           <Link to="/contact">
             <ListItemIcon>
-              <InfoTwoToneIcon fontSize="large" color="secondary" />
+              <PermContactCalendarTwoToneIcon fontSize="large" color="secondary" />
               <ListItemText style={{ marginLeft: 30 }}>
                 <FormattedMessage {...messages.contactLink} />
               </ListItemText>
