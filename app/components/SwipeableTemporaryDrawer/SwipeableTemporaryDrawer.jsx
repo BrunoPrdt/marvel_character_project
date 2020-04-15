@@ -11,7 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import SearchTwoToneIcon from '@material-ui/icons/SearchTwoTone';
 import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
-import ExpandLessTwoToneIcon from '@material-ui/icons/ExpandLessTwoTone';
+import InfoTwoToneIcon from '@material-ui/icons/InfoTwoTone';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
@@ -72,14 +72,17 @@ export default function SwipeableTemporaryDrawer() {
             </ListItemIcon>
           </Link>
         </ListItem>
-        {['Accueil', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
+        <ListItem button key="features">
+          <Link to="/features">
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <InfoTwoToneIcon fontSize="large" color="secondary" />
+              <ListItemText
+                style={{ marginLeft: 30 }}
+                primary=" Fonctionnalités"
+              />
             </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+          </Link>
+        </ListItem>
       </List>
       <Divider />
       <List>

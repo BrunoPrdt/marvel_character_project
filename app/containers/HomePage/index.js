@@ -19,7 +19,9 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
+import H1 from 'components/H1';
 import H2 from 'components/H2';
+import H3 from 'components/H3';
 import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
@@ -60,19 +62,19 @@ export function HomePage({
   return (
     <article>
       <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="A React.js Boilerplate application homepage"
-        />
+        <title>Home Page Marvel Univers</title>
+        <meta name="description" content="A Marvel application homepage" />
       </Helmet>
       <div>
         <CenteredSection>
-          <H2>
+          <H1 style={{ marginBottom: '3em' }}>
             <FormattedMessage {...messages.startProjectHeader} />
-          </H2>
-          <p>
+          </H1>
+          <H3>
             <FormattedMessage {...messages.startProjectMessage} />
+          </H3>
+          <p>
+            <FormattedMessage {...messages.projectMessage} />
           </p>
         </CenteredSection>
         <Section>

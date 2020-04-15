@@ -10,12 +10,18 @@ export const scope = 'boilerplate.containers.HomePage';
 export default defineMessages({
   startProjectHeader: {
     id: `${scope}.start_project.header`,
-    defaultMessage: 'Start your next react project in seconds',
+    defaultMessage:
+      'Marvel Univers ! Votre personnage Marvel préféré est forcément ici.',
   },
   startProjectMessage: {
     id: `${scope}.start_project.message`,
     defaultMessage:
-      'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
+      "Vous désirez en savoir plus sur un des personnages de l'univerrs Mavel et ses comics ? Vous êtes au bon endroit!",
+  },
+  projectMessage: {
+    id: `${scope}.project.message`,
+    defaultMessage:
+      "Clickez sur le bouton 'recherche' ou sur 'Recherchez un personage dans le menu de navigation, et entrez le début ou le nom complet du personnage Marvel désiré",
   },
   trymeHeader: {
     id: `${scope}.tryme.header`,

@@ -27,10 +27,6 @@ function Header() {
         <HeaderLinkSecondary to="/search">
           <FormattedMessage {...messages.search} />
         </HeaderLinkSecondary>
-        {/* </NavLink> */}
-        <HeaderLinkSecondary to="/features">
-          <FormattedMessage {...messages.features} />
-        </HeaderLinkSecondary>
       </NavBar>
     </div>
   );
