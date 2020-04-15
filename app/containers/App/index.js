@@ -18,6 +18,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import CharactersPage from 'containers/CharactersPage/Loadable';
 import SwipeableTemporaryDrawer from '../../components/SwipeableTemporaryDrawer/SwipeableTemporaryDrawer';
+import ContactPage from '../ContactPage';
 
 import GlobalStyle from '../../global-styles';
 
@@ -44,7 +45,8 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/search" component={CharactersPage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route path="/about" component={FeaturePage} />
+        <Route path="/contact" component={ContactPage} />
         <Route path="/characterbyid/:id" component={CharacterDetailsPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>

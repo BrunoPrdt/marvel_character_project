@@ -1,3 +1,7 @@
+/**
+ * app/component/swipeableTemporaryDrawer
+ * @author bruno prdt
+ */
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,9 +16,9 @@ import SearchTwoToneIcon from '@material-ui/icons/SearchTwoTone';
 import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import InfoTwoToneIcon from '@material-ui/icons/InfoTwoTone';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
 
 const useStyles = makeStyles({
   list: {
@@ -60,7 +64,9 @@ export default function SwipeableTemporaryDrawer() {
           <Link to="/">
             <ListItemIcon>
               <HomeTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText style={{ marginLeft: 30 }} primary=" Accueil" />
+              <ListItemText style={{ marginLeft: 30 }}>
+                <FormattedMessage {...messages.homeLink} />
+              </ListItemText>
             </ListItemIcon>
           </Link>
         </ListItem>
@@ -68,32 +74,35 @@ export default function SwipeableTemporaryDrawer() {
           <Link to="/search">
             <ListItemIcon>
               <SearchTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText style={{ marginLeft: 30 }} primary=" Rechercher" />
-            </ListItemIcon>
-          </Link>
-        </ListItem>
-        <ListItem button key="features">
-          <Link to="/features">
-            <ListItemIcon>
-              <InfoTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText
-                style={{ marginLeft: 30 }}
-                primary=" Fonctionnalités"
-              />
+              <ListItemText style={{ marginLeft: 30 }}>
+                <FormattedMessage {...messages.searchLink} />
+              </ListItemText>
             </ListItemIcon>
           </Link>
         </ListItem>
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
+        <ListItem button key="about">
+          <Link to="/about">
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <InfoTwoToneIcon fontSize="large" color="secondary" />
+              <ListItemText style={{ marginLeft: 30 }}>
+                <FormattedMessage {...messages.aboutLink} />
+              </ListItemText>
             </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+          </Link>
+        </ListItem>
+        <ListItem button key="contact">
+          <Link to="/contact">
+            <ListItemIcon>
+              <InfoTwoToneIcon fontSize="large" color="secondary" />
+              <ListItemText style={{ marginLeft: 30 }}>
+                <FormattedMessage {...messages.contactLink} />
+              </ListItemText>
+            </ListItemIcon>
+          </Link>
+        </ListItem>
       </List>
     </div>
   );
