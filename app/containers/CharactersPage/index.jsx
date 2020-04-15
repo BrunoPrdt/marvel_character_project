@@ -28,7 +28,7 @@ export default class CharactersPage extends React.Component {
     this.state = {
       searchName: '',
       characters: [],
-      checked: false,
+      checked: true,
     };
   }
 

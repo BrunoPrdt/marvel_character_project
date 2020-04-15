@@ -1,24 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import {NavLink} from "react-router-dom";
-import HeaderLinkSecondary from "../../components/Header/HeaderLinkSecondary";
+import HeaderLinkSecondary from '../../components/Header/HeaderLinkSecondary';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,13 +35,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function CardCharacter(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  const character = props.character;
+  // eslint-disable-next-line react/prop-types
+  const { character } = props;
   console.log('dans card charracter', character);
 
   return (
@@ -77,9 +63,7 @@ export default function CardCharacter(props) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <HeaderLinkSecondary to={`characterbyid/${character.id}`}>
-            <FormattedMessage {...messages.cardButton} />
-          </HeaderLinkSecondary>
+          <HeaderLinkSecondary to={`characterbyid/${character.id}`} />
         </CardActions>
       </Card>
     </div>
