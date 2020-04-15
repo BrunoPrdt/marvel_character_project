@@ -62,46 +62,49 @@ export default function SwipeableTemporaryDrawer() {
     >
       <List>
         <ListItem button key="home">
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <ListItemIcon>
               <HomeTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText style={{ marginLeft: 30 }}>
-                <FormattedMessage {...messages.homeLink} />
-              </ListItemText>
             </ListItemIcon>
+            <ListItemText style={{ marginLeft: 30 }}>
+              <FormattedMessage {...messages.homeLink} />
+            </ListItemText>
           </Link>
         </ListItem>
         <ListItem button key="search">
-          <Link to="/search">
+          <Link to="/search" style={{ textDecoration: 'none' }}>
             <ListItemIcon>
               <SearchTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText style={{ marginLeft: 30 }}>
-                <FormattedMessage {...messages.searchLink} />
-              </ListItemText>
             </ListItemIcon>
+            <ListItemText style={{ marginLeft: 30 }}>
+              <FormattedMessage {...messages.searchLink} />
+            </ListItemText>
           </Link>
         </ListItem>
       </List>
       <Divider />
       <List>
         <ListItem button key="about">
-          <Link to="/about">
+          <Link to="/about" style={{ textDecoration: 'none' }}>
             <ListItemIcon>
               <InfoTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText style={{ marginLeft: 30 }}>
-                <FormattedMessage {...messages.aboutLink} />
-              </ListItemText>
             </ListItemIcon>
+            <ListItemText style={{ marginLeft: 30 }}>
+              <FormattedMessage {...messages.aboutLink} />
+            </ListItemText>
           </Link>
         </ListItem>
         <ListItem button key="contact">
-          <Link to="/contact">
+          <Link to="/contact" style={{ textDecoration: 'none' }}>
             <ListItemIcon>
-              <PermContactCalendarTwoToneIcon fontSize="large" color="secondary" />
-              <ListItemText style={{ marginLeft: 30 }}>
-                <FormattedMessage {...messages.contactLink} />
-              </ListItemText>
+              <PermContactCalendarTwoToneIcon
+                fontSize="large"
+                color="secondary"
+              />
             </ListItemIcon>
+            <ListItemText style={{ marginLeft: 30 }}>
+              <FormattedMessage {...messages.contactLink} />
+            </ListItemText>
           </Link>
         </ListItem>
       </List>

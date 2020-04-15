@@ -1,23 +1,19 @@
 /*
- * CharacterDetailsPage Messages
+ * ContactPage Messages
  *
  * This contains all the text for the FeaturePage component.
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.CharacterDetailsPage';
+export const scope = 'boilerplate.containers.ContactPage';
 
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'Détail du personnage Marvel',
+    defaultMessage: 'Contact',
   },
-  cardDescription: {
-    id: `${scope}.cardDescription`,
+  contactDescription: {
+    id: `${scope}.contactDescription`,
     defaultMessage: 'Description',
-  },
-  gridComicsHeader: {
-    id: `${scope}.gridComicsHeader`,
-    defaultMessage: 'Comics dans lesquels apparait le personnage',
   },
 });
