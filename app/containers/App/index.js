@@ -38,7 +38,7 @@ export default function App() {
         titleTemplate="%s - Marvel's Characters"
         defaultTitle="Marvel's Characters"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="A Marvel application" />
       </Helmet>
       <SwipeableTemporaryDrawer />
       <Header />

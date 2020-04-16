@@ -8,7 +8,10 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
+import { FormattedMessage } from 'react-intl';
 import HeaderLinkSecondary from '../../components/Header/HeaderLinkSecondary';
+import './messages';
+import messages from "./messages";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,7 +66,10 @@ export default function CardCharacter(props) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <HeaderLinkSecondary to={`characterbyid/${character.id}`} />
+          <p>Test</p>
+          <HeaderLinkSecondary to={`characterbyid/${character.id}`}>
+            <FormattedMessage {...messages.cardButton} />
+          </HeaderLinkSecondary>
         </CardActions>
       </Card>
     </div>

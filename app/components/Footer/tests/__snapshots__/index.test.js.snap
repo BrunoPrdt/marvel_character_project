@@ -16,12 +16,17 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
       <select
         className="Select-sc-1sm01tk-0 wIjFa"
         onChange={[Function]}
-        value="en"
+        value="fr"
       >
         <option
           value="en"
         >
           en
+        </option>
+        <option
+          value="fr"
+        >
+          fr
         </option>
         <option
           value="de"
@@ -33,16 +38,17 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
   </section>
   <section>
     <span>
-      
-      Made with love by 
+
+      Made with love by
       <a
         className="A-br8h0y-0 dwVNvo"
-        href="https://twitter.com/mxstbr"
+        href="https://brunopredot.com"
+        target="blank"
       >
-        Max Stoiber
+        Bruno Prdt
       </a>
       .
-    
+
     </span>
   </section>
 </footer>

@@ -28,7 +28,7 @@ describe('<LocaleToggle />', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should present the default `en` english language option', () => {
+  it('should present the default `fr` french language option', () => {
     const { container } = render(
       <Provider store={store}>
         <LanguageProvider messages={translationMessages}>
@@ -36,7 +36,7 @@ describe('<LocaleToggle />', () => {
         </LanguageProvider>
       </Provider>,
     );
-    expect(container.querySelector('option[value="en"]')).not.toBeNull();
+    expect(container.querySelector('option[value="fr"]')).not.toBeNull();
   });
 
   describe('mapDispatchToProps', () => {

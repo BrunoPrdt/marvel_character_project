@@ -13,7 +13,7 @@ const messages = defineMessages({
   someMessage: {
     id: 'some.id',
     defaultMessage: 'This is some default message',
-    en: 'This is some en message',
+    fr: 'This is some fr message',
   },
 });
 
@@ -21,7 +21,7 @@ describe('<LanguageProvider />', () => {
   it('should render its children', () => {
     const children = <h1>Test</h1>;
     const { container } = render(
-      <LanguageProvider messages={messages} locale="en">
+      <LanguageProvider messages={messages} locale="fr">
         {children}
       </LanguageProvider>,
     );

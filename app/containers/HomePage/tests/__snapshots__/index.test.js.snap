@@ -6,16 +6,22 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
     <section
       class="Section-sc-1eulrsm-0 CenteredSection-sc-6zy0wx-0 imGCbL"
     >
-      <h2
-        class="H2-egphza-0 HsCXl"
+      <h1
+        class="H1-tncdg6-0 hpAKSC"
+        style="margin-bottom: 3em;"
       >
         <span>
-          Start your next react project in seconds
+          Marvel Univers ! Votre personnage Marvel préféré est forcément ici.
         </span>
-      </h2>
+      </h1>
+      <h3>
+        <span>
+          Vous désirez en savoir plus sur un des personnages de l'univerrs Mavel et ses comics ? Vous êtes au bon endroit!
+        </span>
+      </h3>
       <p>
         <span>
-          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
+          Clickez sur le bouton 'recherche' ou sur 'Recherchez un personage dans le menu de navigation, et entrez le début ou le nom complet du personnage Marvel désiré
         </span>
       </p>
     </section>
